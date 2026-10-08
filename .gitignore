@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Uploaded files
+backend/uploads/
+
+# Large audio dataset files
+backend/dataset/REAL/*.wav
+backend/dataset/FAKE/*.wav
+
+# Python model files
+*.pkl
+
+# Joblib model files
+*.joblib
+
+# Keep model configuration
+!backend/models_final/feature_config.json
+!backend/models_live/config.json
+
+# Generated results
+backend/results/
+backend/results_final/
+backend/results_live/
+backend/results_noise_live/
+backend/results_v3/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

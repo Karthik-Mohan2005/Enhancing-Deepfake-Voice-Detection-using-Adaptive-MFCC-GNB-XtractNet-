@@ -1,0 +1,11 @@
+numpy
+pandas
+librosa
+scikit-learn
+imbalanced-learn
+joblib
+matplotlib
+seaborn
+flask
+flask-cors
+soundfile

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DeepFake Voice Detector</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="badge">
+            AI AUDIO FORENSICS
+        </div>
+
+        <h1>
+            DeepFake Voice Detector
+        </h1>
+
+        <p>
+            Upload an audio file and analyze whether
+            the voice is real or artificially generated.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="upload-area"
+             id="uploadArea">
+
+            <div class="upload-icon">
+                🎙️
+            </div>
+
+            <h2>
+                Upload Audio
+            </h2>
+
+            <p>
+                WAV, MP3, FLAC, OGG or M4A
+            </p>
+
+            <input
+                type="file"
+                id="audioFile"
+                accept="audio/*"
+                hidden
+            >
+
+            <button
+                class="select-button"
+                id="selectButton">
+
+                Choose Audio
+
+            </button>
+
+            <div
+                class="filename"
+                id="filename">
+            </div>
+
+        </div>
+
+
+        <button
+            class="analyze-button"
+            id="analyzeButton"
+            disabled>
+
+            Analyze Voice
+
+        </button>
+
+
+        <div
+            class="loading"
+            id="loading">
+
+            <div class="spinner"></div>
+
+            <p>
+                Analyzing audio...
+            </p>
+
+            <span>
+                Extracting MFCC features and analyzing
+                audio segments
+            </span>
+
+        </div>
+
+
+        <div
+            class="error"
+            id="error">
+        </div>
+
+
+        <div
+            class="result"
+            id="result">
+
+            <div class="result-title">
+                ANALYSIS RESULT
+            </div>
+
+
+            <div
+                class="prediction"
+                id="prediction">
+            </div>
+
+
+            <div
+                class="confidence"
+                id="confidence">
+            </div>
+
+
+            <div class="probability-section">
+
+                <div class="probability-row">
+
+                    <div class="probability-label">
+                        <span>REAL</span>
+                        <span id="realValue">
+                            0%
+                        </span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-real"
+                            id="realBar">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="probability-row">
+
+                    <div class="probability-label">
+                        <span>FAKE</span>
+                        <span id="fakeValue">
+                            0%
+                        </span>
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-fake"
+                            id="fakeBar">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    <span>
+                        Audio
+                    </span>
+
+                    <strong id="resultFile">
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        Duration
+                    </span>
+
+                    <strong id="duration">
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        Segments Analyzed
+                    </span>
+
+                    <strong id="segments">
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        REAL Segments
+                    </span>
+
+                    <strong id="realSegments">
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        FAKE Segments
+                    </span>
+
+                    <strong id="fakeSegments">
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        <p>
+            MFCC Feature Extraction • Random Forest
+            Classification • Audio Segment Analysis
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
